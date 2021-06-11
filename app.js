@@ -293,7 +293,7 @@ app.post('/tao-benh-an', upload.array('images'), (req, res) => {
 				- Bệnh nhân: ${patient['ten']}.
 				- Lí do khám: ${patient['li-do-kham']}.
 				- Quá trình bệnh lí: ${patient['qua-trinh-benh-li']}.
-				- Link Đăng nhập vào trang chẩn đoán ${ip.address()}:${port}/dang-nhap rồi vào đường dẫn ${ip.address()}:${port}/benh-an/${patientDB._id} để xem chi tiết về bệnh án/bệnh nhân này.
+				- Link Đăng nhập vào trang chẩn đoán https://zoom-chude3.herokuapp.com/dang-nhap rồi vào đường dẫn https://zoom-chude3.herokuapp.com/benh-an/${patientDB._id} để xem chi tiết về bệnh án/bệnh nhân này.
 				`
 				}
 
