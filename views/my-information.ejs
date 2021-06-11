@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+</head>
+<body>
+    <%-include ("./partials/navbar.ejs")%>
+    <form class="p-3" method="POST" action="/nguoi-dung/<%=_id%>?_method=PUT">
+        <h2>Thông tin của bạn:</h2>
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Họ tên đầy đủ</label>
+            <input  value = "<%=name%>" name="name" placeholder="Họ tên đầy đủ" type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+    
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Email</label>
+            <input value = "<%=email%>" name="email" placeholder="Email" type="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+    
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Username</label>
+            <input value = "<%=username%>" name="username" placeholder="Username" type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+    
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Mật khẩu</label>
+            <input value = "<%=password%>" name="password" placeholder="Mật khẩu" type="password" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+    
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Vai trò</label>
+            <input  value = "<%=role%>" name="role" placeholder="Vai trò" type="text" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+        </div>
+    
+
+        <button type="submit" class="btn btn-primary">Cập nhật/Chỉnh sửa</button>
+    
+    </form>
+</body>
+</html>

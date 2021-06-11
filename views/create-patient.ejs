@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bệnh án</title>
+</head>
+
+<body>
+    <%-include("./partials/navbar.ejs") %>
+
+    <form class='p-3 mt-3' method="POST" action="/tao-benh-an" enctype="multipart/form-data">
+        <h1>PHIẾU KHÁM BỆNH</h1>
+        <h3>I. HÀNH CHÍNH:</h3>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span  class="input-group-text" id="basic-addon3">Bệnh viện</span>
+            </div>
+            <input name="benh-vien" type="text" class="form-control" id="benh-vien" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Họ và tên</span>
+            </div>
+            <input type="text" class="form-control" id="tuoi" name="ten" aria-describedby="basic-addon3">
+        </div>
+
+        <label for="email" class="form-label">Phải điền đúng email cho bệnh nhân để bệnh nhân có thể xem được bệnh án của mình!</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Email bệnh nhân</span>
+            </div>
+            <input type="text" class="form-control" id="email" name="email" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Tuổi</span>
+            </div>
+            <input type="text" class="form-control" id="tuoi" name="tuoi" aria-describedby="basic-addon3">
+        </div>
+
+
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Giới tính</span>
+            </div>
+            <input type="text" class="form-control" id="gioi-tinh" name="gioi-tinh" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Dân tộc</span>
+            </div>
+            <input type="text" class="form-control" id="dan-toc" name="dan-toc" aria-describedby="basic-addon3">
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Địa chỉ</span>
+            </div>
+            <input type="text" class="form-control" id="dia-chi" name="dia-chi" aria-describedby="basic-addon3">
+        </div>
+
+        <h3>II. LÍ DO KHÁM:</h3>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"  id="basic-addon3">Lí do khám</span>
+            </div>
+            <input type="text" id="li-do-kham" name="li-do-kham" class="form-control" aria-describedby="basic-addon3" />
+        </div>
+
+
+        <h3>III. HỎI BỆNH</h3>
+ 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Quá trình bệnh lí</span>
+            </div>
+            <input type="text" id="qua-trinh-benh-li" name="qua-trinh-benh-li"  class="form-control"/>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Tiền sử bệnh</span>
+            </div>
+            <input type="text"  id="tien-su-benh" name="tien-su-benh" 
+            class="form-control"/>
+        </div>
+
+        <h3>III. KHÁM XÉT:</h3>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Toàn thân</span>
+            </div>
+            <input type="text" id="kham-xet-toan-than" name="kham-xet-toan-than"
+            class="form-control"/>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Các bộ phận</span>
+            </div>
+            <input type="text" id="kham-xet-cac-bo-phan" name="kham-xet-cac-bo-phan" 
+            class="form-control"/>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Tóm tắt kết quả lâm sàn</span>
+            </div>
+            <input type="text" id="tom-tat-ket-qua-lam-san" name="tom-tat-ket-qua-lam-san" class="form-control"
+            />
+        </div>
+
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Chẩn đoán vào viện</span>
+            </div>
+            <input type="text"  name="chan-doan-vao-vien" class="form-control"/>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Thuốc</span>
+            </div>
+            <input type="text" name="thuoc" class="form-control"/>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Điều trị tại khoa</span>
+            </div>
+            <input type="text" name="dieu-tri-tai-khoa" class="form-control"/>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Chú ý</span>
+            </div>
+            <input type="text" name="chu-y" class="form-control"/>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Thời gian bắt đầu buổi chẩn đoán</span>
+            </div>
+            <input type="datetime-local" name="thoi-gian" class="form-control" />
+        </div>
+
+        <input class="mb-3"  type="file" name="images" multiple/>
+
+        <div class="form-group mb-3">
+            <label for="exampleFormControlSelect2 mb-1">Chọn các bác sĩ phụ trách chẩn đoán (nhấn ctrl để chọn nhiều)</label>
+            <select name="doctors" multiple class="form-control" id="exampleFormControlSelect2">
+
+                <%for(let email of doctorEmails){%>
+                    <option value='<%=email%>'><%=email%></option>
+                <%}%>
+            </select>   
+        </div>
+
+
+     
+        <button  class="btn btn-primary">Tạo</button>
+
+    </form> 
+
+    
+</body>
+
+</html>

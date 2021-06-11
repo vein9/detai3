@@ -1,0 +1,11 @@
+#navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role {
+  background-color: blue;
+  border-radius: 15px;
+}

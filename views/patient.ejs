@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script>
+        const ROOM_ID = "<%=patient.ma_benh_an%>"
+        const NAME = "<%=name%>"
+        const ROLE = "<%=role%>"
+        const EMAIL =  "<%=email%>"
+    </script>
+    <script  src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/script.js" defer></script>
+
+    <title>Bệnh án <%=patient.ma_benh_an%></title>
+    <style>
+        #video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 300px);
+            grid-auto-rows: 300px;
+        }
+    
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <%-include("./partials/navbar.ejs") %>
+
+    <!-- 1 nhom cac video -->
+    <div id="video-grid">
+    </div>
+
+
+
+    <form class='p-3 mt-3' method="POST" action="/benh-an/<%=patient.ma_benh_an%>?_method=PUT" enctype="multipart/form-data">
+        <h2>Bệnh Án #<%=patient.ma_benh_an%></h2>
+
+        <%for(let field in patient){
+            if(field !== 'images' && field!=='doctors') { %>            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3"><%=field%></span>
+                </div>
+                <input id="<%=field%>" value="<%=patient[field]%>" name="<%=field%>" type="text" class="form-control" aria-describedby="basic-addon3"/>
+            </div>
+            
+        <%}}%>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">
+                    Doctor emails
+                </span>
+            </div>
+            <input  value="<%=patient.doctors%>" type="text" class="form-control"
+                aria-describedby="basic-addon3" disabled />
+        </div>
+        <input class="mb-3" type="file" name="images" multiple />
+    
+        <div class="container">
+            <div class="row">
+                <!-- loop here -->
+                <%for(let imageURL of  patient['images']){%>
+                    <img class="col-xs-12 col-sm-8 col-md-4 mb-2" src="<%=imageURL%>"></img>
+                <%}%>
+            </div>
+        </div>
+
+        <button class="btn btn-primary">Cập nhật</button>
+    
+    </form>
+
+
+
+</body>
+</html>

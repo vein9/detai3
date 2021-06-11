@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/patient.css" rel="stylesheet">
+    <title>Danh sách bệnh án</title>
+</head>
+<body>
+    <%-include("./partials/navbar.ejs")%>
+    <h2 class="mb-3 mt-3 ml-3">Danh sách bệnh án</h2>
+    
+    <%if(patients.length ===0) { %>
+        <h3>Chưa có bệnh án nào</h3>
+    <%}%>
+
+    <div class="list-group">
+        <%for(let i=0; i< patients.length; i++){%>
+            <a href="/benh-an/<%=patients[i]['ma_benh_an']%>" class="list-group-item list-group-item-action flex-column align-items-start active mb-2">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><%=patients[i]['ten']%> - <%=patients[i]['li-do-kham']%></h5>
+                    <small><%=patients[i]['thoi-gian']%></small>
+                </div>
+                <p class="mb-1">
+                    <%=patients[i]['gioi-tinh']%>,<%=patients[i]['tuoi']%>
+                </p>
+                <small>Quá trình bệnh lí: <%=patients[i]['qua-trinh-benh-li']%></small>
+            </a>
+    
+        <%}%>
+
+
+
+    </div>
+
+    </div>
+
+
+    
+</body>
+</html>
