@@ -282,6 +282,7 @@ app.post('/tao-benh-an', upload.array('images'), (req, res) => {
 			console.log('Save patient successfully!')
 
 			// Gui gmail
+			//
 			if (patient.doctors) {
 				let mailOptions = {
 					from: 'sonvt666@gmail.com',
