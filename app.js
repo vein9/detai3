@@ -290,12 +290,12 @@ app.post('/tao-benh-an', upload.array('images'), (req, res) => {
 					subject: `Yêu cầu chẩn đoán cho bệnh nhân ${patient['ten']}, ${patient['li-do-kham']}`,
 					text:
 						`
-				- Thời gian bắt đầu: ${patient['thoi-gian']}.
-				- Bệnh nhân: ${patient['ten']}.
-				- Lí do khám: ${patient['li-do-kham']}.
-				- Quá trình bệnh lí: ${patient['qua-trinh-benh-li']}.
-				- Link Đăng nhập vào trang chẩn đoán https://zoom-chude3.herokuapp.com/dang-nhap rồi vào đường dẫn https://zoom-chude3.herokuapp.com/benh-an/${patientDB._id} để xem chi tiết về bệnh án/bệnh nhân này.
-				`
+							- Thời gian bắt đầu: ${patient['thoi-gian']}.
+							- Bệnh nhân: ${patient['ten']}.
+							- Lí do khám: ${patient['li-do-kham']}.
+							- Quá trình bệnh lí: ${patient['qua-trinh-benh-li']}.
+							- Link Đăng nhập vào trang chẩn đoán http://localhost:3000/dang-nhap rồi vào đường dẫn http://localhost:3000/benh-an/${patientDB._id} để xem chi tiết về bệnh án/bệnh nhân này.
+						`
 				}
 
 				transporter.sendMail(mailOptions, (error, data) => {
