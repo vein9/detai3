@@ -30,12 +30,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-      
-      
-
-        
-        
-        
         <a class="navbar-brand" href="/">WEB CHẨN ĐOÁN</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,26 +46,26 @@
 
                 <%if (role==='admin' ){ %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tao-tai-khoan">Tạo tài khoản</a>
+                        <a class="nav-link" href="/users/create">Tạo tài khoản</a>
                     </li>
             
                     <li class="nav-item">
-                        <a class="nav-link" href="/tao-benh-an">Tạo bệnh án</a>
+                        <a class="nav-link" href="/patients/create">Tạo bệnh án</a>
                     </li>
             
                     <li class="nav-item">
-                        <a class="nav-link" href="/danh-sach-benh-an">Danh sách bệnh án</a>
+                        <a class="nav-link" href="/patients">Danh sách bệnh án</a>
                     </li>
                 <%}%>
 
 
                 <%if (role.toLowerCase()==='bệnh nhân' ){ %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tao-benh-an">Gửi yêu cầu tạo bệnh án</a>
+                        <a class="nav-link" href="/patients/create">Gửi yêu cầu tạo bệnh án</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/danh-sach-benh-an/<%=email%>">Danh sách bệnh án của bạn</a>
+                        <a class="nav-link" href="/patients/email/<%=email%>">Danh sách bệnh án của bạn</a>
                     </li>
                 <%}%>
 
@@ -100,7 +94,7 @@
         logoutButton.onclick = () => {
             console.log('Click logout button')
             removeCookie('user')
-            window.location.href = '/dang-nhap'
+            window.location.href = '/login'
         }
     </script>
 

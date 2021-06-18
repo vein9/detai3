@@ -15,18 +15,69 @@
     <h1>isAdmin<%=isAdmin%></h1> -->
 
 
-    <div class="container mt-3">
-        
-       
-        <h2>Xin chào <%=role%>
-</h2>
-<h3>Chào mừng bạn đến với web hội chẩn của bệnh viện chúng tôi!</h3>
-<h3>Trên thanh navbar sẽ có những gì bạn cần</h3>
-<p>Trang web này chỉ là 1 bài tập với tính năng đơn giản, thông cảm vì còn quá nhiều deadline, em đã không ngủ đủ giấc tối qua</p>
-        <img src="https://wallpaperaccess.com/full/20585.jpg" style="width: 60vw; height: 60vh;" />
+    <div class="container mt-3 mx-auto">
+        <h3>Xin chào: <%=name%>
+        <h3>Bạn là: <%=role%></h3>
+
+        <div class="container">
+            <div class="row">
+                <%if (role==='admin' ){ %>
+                    <div class="card col-xs-12 col-sm-8 col-md-4 mb-2" style="width: 18rem;">
+                        <img src="https://wallpaperaccess.com/full/20585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tạo tài khoản</h5>
+                            <p class="card-text">Admin có quyền tạo tài khoản và phân quyền cho tất cả người dùng.</p>
+                            <a href="/users/create" class="btn btn-primary">Tạo tài khoản</a>
+                        </div>
+                    </div>
+
+                    <div class="card col-xs-12 col-sm-8 col-md-4 mb-2" style="width: 18rem;">
+                        <img src="https://wallpaperaccess.com/full/20585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tạo bệnh án</h5>
+                            <p class="card-text">Tạo bệnh án cho bệnh nhân dưới tư cách là Admin.</p>
+                            <a href="/patients/create" class="btn btn-primary">Tạo bệnh án</a>
+                        </div>
+                    </div>
+
+                    <div class="card col-xs-12 col-sm-8 col-md-4 mb-2" style="width: 18rem;">
+                        <img src="https://wallpaperaccess.com/full/20585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Danh sách bệnh án</h5>
+                            <p class="card-text">Xem danh sách bệnh án của tất cả bệnh nhân.</p>
+                            <a href="/patients" class="btn btn-primary">Danh sách bệnh án</a>
+                        </div>
+                    </div>
+                <%}%>
+
+                <%if (role.toLowerCase()==='bệnh nhân' ){ %>
+
+                    <div class="card col-xs-12 col-sm-8 col-md-4 mb-2" style="width: 18rem;">
+                        <img src="https://wallpaperaccess.com/full/20585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gửi yêu cầu bệnh án</h5>
+                            <p class="card-text">Bạn có quyền được yêu cầu bệnh án của bản thân, gửi yêu cầu và đợi bệnh viện xác nhận.</p>
+                            <a href="/patients/create" class="btn btn-primary">Gửi yêu cầu bệnh án</a>
+                        </div>
+                    </div>
+
+                    <div class="card col-xs-12 col-sm-8 col-md-4 mb-2" style="width: 18rem;">
+                        <img src="https://wallpaperaccess.com/full/20585.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Danh sách bệnh án của bạn</h5>
+                            <p class="card-text">Bạn được quyền xem danh sách các bệnh án được đính email của bạn.</p>
+                            <a href="/patients/email/<%=email%>" class="btn btn-primary">Danh sách bệnh án của bạn</a>
+                        </div>
+                    </div>
+                   
+                <%}%>
+               
+            </div>
+        </div>
+
+    
+        <img  style ="width: 80vw; height: 100vh;" src="https://images-na.ssl-images-amazon.com/images/I/71E-fto-cVL._UL1500_.jpg"/>
+
     </div>
-
-
-
 </body>
 </html>

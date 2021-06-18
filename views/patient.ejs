@@ -39,7 +39,7 @@
 
 
 
-    <form class='p-3 mt-3' method="POST" action="/benh-an/<%=patient.ma_benh_an%>?_method=PUT" enctype="multipart/form-data">
+    <form class='p-3 mt-3' method="POST" action="/patients/id/<%=patient.ma_benh_an%>?_method=PUT">
         <h2>Bệnh Án #<%=patient.ma_benh_an%></h2>
 
         <%for(let field in patient){
@@ -62,7 +62,7 @@
             <input  value="<%=patient.doctors%>" type="text" class="form-control"
                 aria-describedby="basic-addon3" disabled />
         </div>
-        <input class="mb-3" type="file" name="images" multiple />
+        <!-- <input class="mb-3" type="file" name="images" multiple /> -->
     
         <div class="container">
             <div class="row">

@@ -17,7 +17,7 @@
 
     <div class="list-group">
         <%for(let i=0; i< patients.length; i++){%>
-            <a href="/benh-an/<%=patients[i]['ma_benh_an']%>" class="list-group-item list-group-item-action flex-column align-items-start active mb-2">
+            <a href="/patients/id/<%=patients[i]['ma_benh_an']%>" class="list-group-item list-group-item-action flex-column align-items-start active mb-2">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1"><%=patients[i]['ten']%> - <%=patients[i]['li-do-kham']%></h5>
                     <small><%=patients[i]['thoi-gian']%></small>
